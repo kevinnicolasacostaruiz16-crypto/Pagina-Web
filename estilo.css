@@ -146,8 +146,6 @@ h2 {
     font-size: 11px;
     font-weight: bold;
 }
-
-
 form {
     background: #fffde0;
     width: 400px;
@@ -402,4 +400,215 @@ button:hover {
 img {
     max-width: 100%;
     height: auto;
+}
+/* ===================== FOOTER ===================== */
+footer {
+    background: #111800;
+    border-top: 4px solid #f0e000;
+    padding: 30px 20px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    color: #a8e000;
+    text-decoration: none;
+    background-color: #1e2800;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid #4a9900;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    background-color: #2d6a00;
+    color: #f0e000;
+    border-color: #f0e000;
+}
+
+.footer-copy {
+    color: #5a6600;
+    font-size: 12px;
+    margin: 0;
+}
+
+.boton-whatsapp-footer {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px 26px;
+    border-radius: 50px;
+    margin: 16px 0 14px;
+    transition: 0.3s;
+    box-shadow: 0 0 14px #25D36677;
+    animation: wssp-pulse 2.5s ease-in-out infinite;
+}
+
+.boton-whatsapp-footer:hover {
+    background: #1ebe5a;
+    box-shadow: 0 0 28px #25D366cc;
+    transform: scale(1.05);
+    animation-play-state: paused;
+}
+
+@keyframes wssp-pulse {
+    0%,  100% { box-shadow: 0 0 10px #25D36655; }
+    50%        { box-shadow: 0 0 24px #25D366bb; }
+}
+
+/* ===================== PÁGINAS LEGALES ===================== */
+.legal-main {
+    width: 80%;
+    margin: 30px auto;
+    background-color: #fffde0;
+    padding: 30px 40px;
+    border-radius: 20px;
+    border: 3px solid #a8e000;
+    text-align: left;
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #a8e000;
+}
+
+.legal-badge {
+    display: inline-block;
+    background-color: #111800;
+    color: #a8e000;
+    border: 1px solid #a8e000;
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.legal-header h2 {
+    color: #2d6a00;
+    font-size: 28px;
+    margin: 10px 0 6px;
+    border: none;
+    display: block;
+}
+
+.legal-section {
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #d4e88a;
+}
+
+.legal-section:last-child {
+    border-bottom: none;
+}
+
+.legal-section h3 {
+    color: #ff8c00;
+    font-size: 17px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 4px solid #ff8c00;
+}
+
+.legal-section p {
+    color: #2a2a00;
+    line-height: 1.75;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.legal-list {
+    color: #2a2a00;
+    font-size: 14px;
+    line-height: 1.8;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.legal-list li {
+    margin-bottom: 6px;
+}
+
+.aviso-section {
+    background-color: #f0ffe0;
+    border: 1.5px solid #a8e000;
+    border-radius: 12px;
+    padding: 16px 20px;
+    border-bottom: 1.5px solid #a8e000 !important;
+}
+
+.aviso-section p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* Producto garantía cards */
+.producto-garantia {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #f8ffe0;
+    border: 1.5px solid #d4e88a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 12px 0;
+}
+
+.producto-icono {
+    font-size: 34px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.producto-garantia strong {
+    color: #ff8c00;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.producto-garantia p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ===================== RESPONSIVE LEGAL ===================== */
+@media (max-width: 768px) {
+    .legal-main {
+        width: 92%;
+        padding: 20px 18px;
+    }
+
+    .legal-header h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-main {
+        width: 95%;
+        padding: 15px 12px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
 }
