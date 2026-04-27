@@ -5,6 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesión De Productos</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* === PRECIOS === */
+        .precio-box {
+            margin-top: 12px;
+            background: #0e1500;
+            border: 1px solid #ff8c0055;
+            border-radius: 10px;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .precio-titulo {
+            color: #f0e000;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .precio-fila {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            border-bottom: 1px solid #ffffff11;
+        }
+
+        .precio-fila:last-child {
+            border-bottom: none;
+        }
+
+        .precio-label {
+            color: #b0c070;
+            font-size: 11px;
+        }
+
+        .precio-valor {
+            color: #a8e000;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .precio-nota {
+            color: #5a6600;
+            font-size: 10px;
+            margin-top: 6px;
+            font-style: italic;
+        }
+
+        .materia-badge-disponible {
+            display: inline-block;
+            margin-top: 8px;
+            background-color: #ff8c0022;
+            color: #ff8c00;
+            border: 1px solid #ff8c0077;
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,29 +81,81 @@
     </header>
 
     <main>
-       
         <p class="subtitulo">Selecciona el producto que más se ajuste a tu necesidad</p>
 
         <div class="materias-grid">
+
+            <!-- NARANJA -->
             <div class="materia-card">
                 <img src="img/naranja-artículo.jpg" alt="Naranja" class="materia-icon" width="100" height="100">
-                <p class="materia-nombre">Naranja</p>
+                <p class="materia-nombre">🍊 Naranja</p>
                 <p class="materia-desc">Fruta cítrica rica en vitamina C.</p>
-                <span class="materia-badge">Media Produccion en temporada</span>
+                <span class="materia-badge">Media producción en temporada</span>
+                <div class="precio-box">
+                    <span class="precio-titulo">💰 Precios por presentación</span>
+                    <div class="precio-fila">
+                        <span class="precio-label">Bulto 40 kg</span>
+                        <span class="precio-valor">$45.000</span>
+                    </div>
+                    <div class="precio-fila">
+                        <span class="precio-label">Canastilla 20 kg</span>
+                        <span class="precio-valor">$25.000</span>
+                    </div>
+                    <p class="precio-nota">* Precios sujetos a temporada de cosecha</p>
+                </div>
+                <span class="materia-badge-disponible">📦 Consultar disponibilidad</span>
+            </div>
+
+            <!-- LIMÓN TAHITÍ -->
             <div class="materia-card">
                 <img src="img/fruta-limon.jpg" alt="Limón Tahití" class="materia-icon" width="100" height="100">
-                <p class="materia-nombre">Limón Tahití</p>
+                <p class="materia-nombre">🍋 Limón Tahití</p>
                 <p class="materia-desc">Ideal para jugos y gastronomía.</p>
                 <span class="materia-badge">Alta producción en temporada</span>
+                <div class="precio-box">
+                    <span class="precio-titulo">💰 Precios por presentación</span>
+                    <div class="precio-fila">
+                        <span class="precio-label">Bulto 70 kg</span>
+                        <span class="precio-valor">$300.000</span>
+                    </div>
+                    <div class="precio-fila">
+                        <span class="precio-label">Canastilla 25 kg</span>
+                        <span class="precio-valor">$150.000</span>
+                    </div>
+                    <p class="precio-nota">* Precios sujetos a temporada de cosecha</p>
+                </div>
+                <span class="materia-badge-disponible">📦 Consultar disponibilidad</span>
             </div>
+
+            <!-- AGUACATE -->
             <div class="materia-card">
-                <img src="img/images.jpg" alt="Aguacate" class="materia-icon" width="100" height="100"> 
-                <p class="materia-nombre">Aguacate</p>
+                <img src="img/images.jpg" alt="Aguacate" class="materia-icon" width="100" height="100">
+                <p class="materia-nombre">🥑 Aguacate</p>
                 <p class="materia-desc">Fuente de grasas saludables y energía.</p>
                 <span class="materia-badge">Cultivo nacional</span>
+                <div class="precio-box">
+                    <span class="precio-titulo">💰 Precios por presentación</span>
+                    <div class="precio-fila">
+                        <span class="precio-label">Bulto 20 kg</span>
+                        <span class="precio-valor">$60.000</span>
+                    </div>
+                    <div class="precio-fila">
+                        <span class="precio-label">Canastilla 10 kg</span>
+                        <span class="precio-valor">$35.000</span>
+                    </div>
+                    <p class="precio-nota">* Precios sujetos a temporada de cosecha</p>
+                </div>
+                <span class="materia-badge-disponible">📦 Consultar disponibilidad</span>
             </div>
+
+
         </div>
+
+        <p style="color:#5a6600; font-size:12px; margin-top:20px;">
+            ⚠️ Los precios son de referencia y pueden variar según el volumen y temporada. Contáctenos para confirmar precios y disponibilidad.
+        </p>
     </main>
+
     <footer>
         <div class="footer-links">
             <a href="terminos.html">Términos y Condiciones</a>
@@ -50,8 +165,7 @@
         <a href="https://wa.me/573107821352" target="_blank" class="boton-whatsapp-footer">
             <img src="img/wssp.png" width="24" height="24" alt="WhatsApp"> Contáctanos por WhatsApp
         </a>
-        <p class="footer-copy">© 2025 Finca La Pradera — Todos los derechos reservados</p>
+        <p class="footer-copy">© 2025 FRESH HUILA EXPORT — Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
-

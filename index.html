@@ -1,42 +1,520 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Principal</title>
+    <title>FRESH HUILA EXPORT — Inicio</title>
     <link rel="stylesheet" href="estilo.css">
+    <style>
+        /* ===== NUEVAS SECCIONES: ESTADÍSTICAS, BENEFICIOS, POR QUÉ ELEGIRNOS ===== */
+
+        /* Banner demo */
+        .demo-banner {
+            background: linear-gradient(90deg, #ff8c00, #f0e000, #ff8c00);
+            background-size: 200% 100%;
+            animation: banner-move 3s linear infinite;
+            padding: 9px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 13px;
+            color: #0e1500;
+            letter-spacing: 1px;
+        }
+        @keyframes banner-move {
+            0%   { background-position: 0%   50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        /* Hero intro */
+        .hero-intro {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background: radial-gradient(ellipse at top, #1e3000 0%, #0e1500 70%);
+        }
+        .hero-tag {
+            display: inline-block;
+            background: #a8e00022;
+            border: 1px solid #a8e000;
+            color: #a8e000;
+            border-radius: 50px;
+            padding: 5px 18px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .hero-intro h2 {
+            color: #fff;
+            font-size: 28px;
+            line-height: 1.35;
+            max-width: 680px;
+            margin: 0 auto 12px;
+            border: none;
+        }
+        .hero-intro h2 span { color: #f0e000; }
+        .hero-intro p {
+            color: #8a9a50;
+            font-size: 14px;
+            max-width: 540px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+
+        /* Estadísticas */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #111800;
+            border-top: 3px solid #f0e000;
+            border-bottom: 3px solid #f0e000;
+        }
+        .stat-item {
+            flex: 1;
+            min-width: 130px;
+            padding: 22px 16px;
+            text-align: center;
+            border-right: 1px solid #2d3a00;
+            transition: background 0.3s;
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-item:hover { background: #1a2400; }
+        .stat-num {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ff8c00;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 11px;
+            color: #a8e000;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 5px;
+            font-weight: 700;
+        }
+
+        /* Encabezados de sección */
+        .section-header {
+            text-align: center;
+            padding: 50px 20px 14px;
+        }
+        .section-tag {
+            display: inline-block;
+            background: #ff8c0022;
+            border: 1px solid #ff8c00;
+            color: #ff8c00;
+            border-radius: 50px;
+            padding: 4px 16px;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-header h2 {
+            font-size: 30px;
+            color: #0d6023;
+            margin-bottom: 10px;
+            border: none;
+            display: block;
+        }
+        .section-header h2 span { color: #f0e000; }
+        .section-header p {
+            color: #8a9a50;
+            font-size: 14px;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Grid de beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 28px 30px 50px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .benefit-card {
+            background: #111800;
+            border: 1.5px solid #2d3a00;
+            border-radius: 16px;
+            padding: 26px 20px;
+            transition: 0.35s;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 16px 16px 0 0;
+            background: linear-gradient(90deg, #ff8c00, #f0e000);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .benefit-card:hover {
+            border-color: #ff8c00;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px #ff8c0022;
+        }
+        .benefit-card:hover::before { opacity: 1; }
+        .benefit-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .benefit-title {
+            color: #ff8c00;
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .benefit-desc {
+            color: #8a9a50;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Sección Por qué elegirnos */
+        .why-section {
+            background: radial-gradient(ellipse at center, #1a2400 0%, #0e1500 70%);
+            padding: 10px 30px 60px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 30px auto 0;
+            align-items: start;
+        }
+        .why-left h3 {
+            font-size: 26px;
+            color: #0cd406;
+            margin-bottom: 24px;
+            line-height: 1.35;
+        }
+        .why-left h3 span { color: #a8e000; }
+        .why-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+        .why-dot {
+            width: 40px;
+            height: 40px;
+            background: #ff8c0018;
+            border: 2px solid #ff8c00;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            flex-shrink: 0;
+        }
+        .why-text strong {
+            color: #f0e000;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .why-text p {
+            color: #8a9a50;
+            font-size: 13px;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .why-right {
+            background: #111800;
+            border: 2px solid #2d3a00;
+            border-radius: 20px;
+            padding: 28px 22px;
+            text-align: center;
+        }
+        .why-right h4 {
+            color: #a8e000;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .cert-badge {
+            background: #a8e00012;
+            border: 1.5px solid #2d4a00;
+            border-radius: 12px;
+            padding: 13px 16px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            text-align: left;
+            transition: 0.3s;
+        }
+        .cert-badge:hover {
+            background: #a8e00022;
+            border-color: #a8e000;
+        }
+        .cert-icon { font-size: 26px; flex-shrink: 0; }
+        .cert-title { color: #a8e000; font-weight: 800; font-size: 13px; }
+        .cert-sub  { color: #5a7a20; font-size: 11px; margin-top: 2px; }
+
+        /* Botón CTA WhatsApp grande */
+        .cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            background: #111800;
+            border-top: 4px solid #f0e000;
+            border-bottom: 4px solid #f0e000;
+        }
+        .cta-section h2 {
+            color: #209300;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border: none;
+            display: block;
+        }
+        .cta-section p {
+            color: #8a9a50;
+            font-size: 14px;
+            margin-bottom: 26px;
+        }
+
+        /* Separador visual */
+        .separator {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a8e00033, transparent);
+            margin: 0 30px;
+        }
+
+        /* Responsive nuevas secciones */
+        @media (max-width: 768px) {
+            .why-grid { grid-template-columns: 1fr; }
+            .stat-num { font-size: 26px; }
+            .stat-item { min-width: 110px; padding: 16px 10px; }
+            .benefits-grid { padding: 20px 16px 40px; }
+            .why-section { padding: 10px 16px 40px; }
+            .section-header h2 { font-size: 24px; }
+        }
+        @media (max-width: 480px) {
+            .stat-item { min-width: 80px; }
+            .stat-num { font-size: 22px; }
+            .stat-label { font-size: 10px; letter-spacing: 0.5px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-        <h1>FINCA LA PRADERA</h1>
-        <a href="index.html">Inicio</a>
-        <a href="contactenos.html">Contacto</a>
-        <a href="productos.html">Productos</a>
-        <a href="historia.html">Historia</a>
-        
-    </nav>
-    </header>
-    <main>
-<h2>Bienvenido a la pagina principal de La Finca la Pradera aqui encontraras toda la informacion acerca de nosotros</h2>
-<p>
-</p>
-<img class="imagen-hero" src="img/kkk.jpeg" alt="300" width="300" height="300">
 
-            <p>@ Todos los derechos reservados</p>
+    <!-- BANNER DEMO -->
+    <div class="demo-banner">🍋‍🟩 FRESH HUILA EXPORT 🍋‍🟩</div>
+
+    <header>
+        <h1>FRESH HUILA EXPORT</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="contactenos.html">Contacto</a>
+            <a href="productos.html">Productos</a>
+            <a href="historia.html">Historia</a>
+        </nav>
+        <header>
+    <img src="img/logo empresa.jpg" width="150" height="150" alt="Logo Fresh Huila Export">
+  </header>
+    </header>
+
+    <!-- HERO INTRO -->
+    <section class="hero-intro">
+        <div class="hero-tag">🌿 Del campo colombiano al mundo</div>
+        
+        <p>Más de 15 años cultivando naranjas, limones Tahití y aguacates con los más altos estándares agrícolas de Colombia. Directo del productor para ti.</p>
+        <img class="imagen-hero" src="img/kkk.jpeg" alt="Finca Fresh Huila Export" width="320" height="220">
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-label">Productos estrella</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Producción nacional</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">24h</div>
+            <div class="stat-label">Respuesta garantía</div>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- BIENVENIDA BREVE -->
+        <h2>Bienvenido a FRESH HUILA EXPORT</h2>
+        <p class="subtitulo">Aquí encontrarás toda la información sobre nosotros, nuestros productos y cómo trabajamos.</p>
+
+        <div class="separator"></div>
+
+        <!-- SECCIÓN BENEFICIOS -->
+        <div class="section-header">
+            <div class="section-tag">✅ Beneficios</div>
+            <h2>¿Por qué elegir nuestros <span>productos</span>?</h2>
+            <p>Cada fruto que cultivamos lleva el compromiso de calidad y cuidado que nos ha caracterizado por más de una década.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <span class="benefit-icon">🌱</span>
+                <div class="benefit-title">Cultivo Propio</div>
+                <p class="benefit-desc">Controlamos cada etapa del proceso, desde la siembra hasta la cosecha, garantizando la trazabilidad y frescura de cada producto que llega a tus manos.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🏔️</span>
+                <div class="benefit-title">Tierra Huilense</div>
+                <p class="benefit-desc">Nuestras fincas están en las fértiles laderas del Huila, con clima ideal que le da a nuestras frutas un sabor y una calidad difícil de igualar en otras regiones.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">📦</span>
+                <div class="benefit-title">Empaque Cuidadoso</div>
+                <p class="benefit-desc">Seleccionamos y empacamos cada producto bajo estrictos estándares higiénicos para que llegue en perfectas condiciones a su destino final.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">🤝</span>
+                <div class="benefit-title">Trato Directo</div>
+                <p class="benefit-desc">Sin intermediarios. Negocia directamente con los productores y obtén el mejor precio con la máxima confianza y transparencia en cada operación.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">⚡</span>
+                <div class="benefit-title">Despacho Ágil</div>
+                <p class="benefit-desc">Coordinamos el envío de manera eficiente para que tu pedido llegue en el menor tiempo posible y siempre en óptimas condiciones de frescura.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="benefit-icon">✅</span>
+                <div class="benefit-title">Garantía Real</div>
+                <p class="benefit-desc">Respaldamos cada pedido con nuestra <a href="garantia.html" style="color:#a8e000;">política de garantía</a>. Si algo no está bien, lo solucionamos en menos de 48 horas hábiles.</p>
+            </div>
+        </div>
+
     </main>
-    
+
+    <!-- SECCIÓN POR QUÉ ELEGIRNOS (fuera de main para fondo diferente) -->
+    <section class="why-section">
+        <div class="section-header">
+            <div class="section-tag">🏆 ¿Por qué elegirnos?</div>
+            <h2>Una empresa con <span>valores de campo</span></h2>
+            <p>Nuestro compromiso va más allá de vender frutas — cultivamos relaciones duraderas con nuestros clientes y proveedores.</p>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-left">
+                <h3>Lo que nos hace <span>diferentes</span></h3>
+
+                <div class="why-point">
+                    <div class="why-dot">🌿</div>
+                    <div class="why-text">
+                        <strong>Producción sostenible</strong>
+                        <p>Aplicamos buenas prácticas agrícolas que cuidan el suelo y el medioambiente, pensando siempre en el futuro de nuestra región y de las próximas generaciones.</p>
+                    </div>
+                </div>
+
+                <div class="why-point">
+                    <div class="why-dot">🍊</div>
+                    <div class="why-text">
+                        <strong>Calidad en temporada</strong>
+                        <p>Conocemos los ciclos de cada fruto. Te asesoramos sobre disponibilidad y el mejor momento de compra según la cosecha para que siempre recibas lo mejor.</p>
+                    </div>
+                </div>
+
+                <div class="why-point">
+                    <div class="why-dot">📱</div>
+                    <div class="why-text">
+                        <strong>Atención personalizada</strong>
+                        <p>Contacto directo por WhatsApp con nuestro equipo. Respondemos rápido y te acompañamos en todo el proceso de compra, envío y postventa.</p>
+                    </div>
+                </div>
+
+                <div class="why-point">
+                    <div class="why-dot">💰</div>
+                    <div class="why-text">
+                        <strong>Precios justos</strong>
+                        <p>Al comprar directamente al productor, eliminas intermediarios y obtienes productos frescos al mejor precio del mercado, con total transparencia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-right">
+                <h4>Nuestros sellos de confianza</h4>
+
+                <div class="cert-badge">
+                    <span class="cert-icon">🥇</span>
+                    <div>
+                        <div class="cert-title">Calidad Garantizada</div>
+                        <div class="cert-sub">Estándares de selección en cada cosecha</div>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <span class="cert-icon">🇨🇴</span>
+                    <div>
+                        <div class="cert-title">100% Colombiano</div>
+                        <div class="cert-sub">Orgullosamente del Huila para el mundo</div>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <span class="cert-icon">🌡️</span>
+                    <div>
+                        <div class="cert-title">Control de Madurez</div>
+                        <div class="cert-sub">Punto óptimo según tu necesidad</div>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <span class="cert-icon">📋</span>
+                    <div>
+                        <div class="cert-title">Transparencia Total</div>
+                        <div class="cert-sub"><a href="terminos.html" style="color:#5a7a20;">Términos claros</a>, sin sorpresas</div>
+                    </div>
+                </div>
+                <div class="cert-badge">
+                    <span class="cert-icon">📦</span>
+                    <div>
+                        <div class="cert-title">Ver nuestros Productos</div>
+                        <div class="cert-sub"><a href="productos.html" style="color:#5a7a20;">Naranja, Limón Tahití y Aguacate →</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <h2>¿Listo para hacer tu pedido?</h2>
+        <p>Contáctanos ahora y recibe asesoría personalizada sobre disponibilidad y precios de temporada.</p>
+        <a href="https://wa.me/573107821352" target="_blank" class="boton-whatsapp-footer" style="font-size:16px; padding:14px 32px;">
+            <img src="img/wssp.png" width="24" height="24" alt="WhatsApp"> Contáctanos por WhatsApp
+        </a>
+        <br><br>
+        <a href="contactenos.html" style="color:#a8e000; font-size:13px; text-decoration:underline;">O completa nuestro formulario de registro →</a>
+    </section>
+
     <footer>
         <div class="footer-links">
             <a href="terminos.html">Términos y Condiciones</a>
             <a href="privacidad.html">Política de Privacidad</a>
             <a href="garantia.html">Política de Garantía</a>
         </div>
-        <a href="https://wa.me/573107821352" target="_blank" class="boton-whatsapp-footer">
-            <img src="img/wssp.png" width="24" height="24" alt="WhatsApp"> Contáctanos por WhatsApp
-        </a>
-        <p class="footer-copy">© 2025 Finca La Pradera — Todos los derechos reservados</p>
+       
+     
+        <p class="footer-copy">© 2025 FRESH HUILA EXPORT — Todos los derechos reservados</p>
     </footer>
+
 </body>
 </html>
