@@ -3,94 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesión De Productos</title>
+    <title>Productos Agrícolas — FRESH HUILA EXPORT</title>
     <link rel="stylesheet" href="estilo.css">
     <style>
-        /* === PRECIOS === */
-        .precio-box {
-            margin-top: 12px;
-            background: #0e1500;
-            border: 1px solid #ff8c0055;
-            border-radius: 10px;
-            padding: 10px 12px;
-            text-align: left;
-        }
+        .precio-box { margin-top: 14px; background: #0e1500; border: 1px solid #ff8c0055; border-radius: 10px; padding: 12px 14px; text-align: left; }
+        .precio-titulo { color: #f0e000; font-family:'Montserrat',sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .precio-fila { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #ffffff11; }
+        .precio-fila:last-child { border-bottom: none; }
+        .precio-label { color: #b0c070; font-size: 12px; }
+        .precio-valor { color: #a8e000; font-size: 14px; font-weight: 800; }
+        .precio-nota { color: #5a6600; font-size: 10px; margin-top: 6px; font-style: italic; }
+        .materia-badge-disponible { display: inline-block; margin-top: 8px; background-color: #ff8c0022; color: #ff8c00; border: 1px solid #ff8c0077; border-radius: 20px; padding: 3px 10px; font-size: 10px; font-weight: 700; }
 
-        .precio-titulo {
-            color: #f0e000;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 6px;
+        .pedido-btn {
             display: block;
+            margin-top: 14px;
+            background: linear-gradient(135deg,#25D366,#1ebe5a);
+            color: #fff;
+            padding: 9px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            text-align: center;
+            transition: 0.3s;
         }
 
-        .precio-fila {
+        .pedido-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px #25D36666;
+        }
+
+        .temporada-badge {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 4px 0;
-            border-bottom: 1px solid #ffffff11;
+            gap: 8px;
+            background: #0e1500;
+            border: 1px solid #2d3a00;
+            border-radius: 8px;
+            padding: 8px 12px;
+            margin-top: 10px;
         }
 
-        .precio-fila:last-child {
-            border-bottom: none;
+        .temporada-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
         }
 
-        .precio-label {
-            color: #b0c070;
-            font-size: 11px;
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
-        .precio-valor {
-            color: #a8e000;
-            font-size: 13px;
-            font-weight: bold;
-        }
+        .dot-alta { background: #a8e000; }
+        .dot-media { background: #f0e000; }
 
-        .precio-nota {
-            color: #5a6600;
-            font-size: 10px;
-            margin-top: 6px;
-            font-style: italic;
-        }
-
-        .materia-badge-disponible {
-            display: inline-block;
-            margin-top: 8px;
-            background-color: #ff8c0022;
-            color: #ff8c00;
-            border: 1px solid #ff8c0077;
-            border-radius: 20px;
-            padding: 3px 10px;
-            font-size: 10px;
-            font-weight: bold;
-        }
+        .temporada-text { color: #b0c070; font-size: 11px; }
     </style>
 </head>
 <body>
+
+    <div class="demo-banner">🍊 Calidad directo del productor — Huila, Colombia 🌿</div>
+
     <header>
-        <h1>Productos Agricolas</h1>
+        <div style="display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;">
+            <img src="img/logo empresa.jpg" width="60" height="60" alt="Logo" style="border-radius:50%; border:2px solid #a8e000; object-fit:cover;">
+            <h1>Productos Agrícolas</h1>
+        </div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="contactenos.html">Contacto</a>
-            <a href="productos.html">Productos</a>
-            <a href="historia.html">Historia</a>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="productos.html" class="active">🍊 Productos</a>
+            <a href="historia.html">📖 Historia</a>
+            <a href="contactenos.html">📋 Contacto</a>
         </nav>
     </header>
 
     <main>
-        <p class="subtitulo">Selecciona el producto que más se ajuste a tu necesidad</p>
+        <h2>Nuestros Productos</h2>
+        <p class="subtitulo">Selecciona el producto que más se ajuste a tu necesidad. Precios directos del productor, sin intermediarios.</p>
+
+        <!-- AVISO DE TEMPORADA -->
+        <div style="background:#111800; border:1.5px solid #f0e000; border-radius:14px; padding:16px 20px; margin:20px 0; text-align:left; display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+            <span style="font-size:28px;">📅</span>
+            <div>
+                <p style="color:#f0e000; font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; margin:0 0 4px;">Consulta disponibilidad de temporada</p>
+                <p style="color:#8a9a50; font-size:13px; margin:0;">Los precios y cantidades disponibles varían según la cosecha. Contáctanos para confirmar disponibilidad actual antes de hacer tu pedido.</p>
+            </div>
+        </div>
 
         <div class="materias-grid">
 
             <!-- NARANJA -->
             <div class="materia-card">
-                <img src="img/naranja-artículo.jpg" alt="Naranja" class="materia-icon" width="100" height="100">
-                <p class="materia-nombre">🍊 Naranja</p>
-                <p class="materia-desc">Fruta cítrica rica en vitamina C.</p>
-                <span class="materia-badge">Media producción en temporada</span>
+                <img src="img/naranja-artículo.jpg" alt="Naranja" class="materia-icon">
+                <p class="materia-nombre">🍊 Naranja Valencia</p>
+                <p class="materia-desc">Fruta cítrica dulce y jugosa, rica en vitamina C. Cultivada en las laderas huilenses con clima ideal para su desarrollo óptimo.</p>
+                <div class="temporada-badge">
+                    <div class="temporada-dot dot-media"></div>
+                    <span class="temporada-text">Media producción en temporada</span>
+                </div>
                 <div class="precio-box">
                     <span class="precio-titulo">💰 Precios por presentación</span>
                     <div class="precio-fila">
@@ -104,14 +116,18 @@
                     <p class="precio-nota">* Precios sujetos a temporada de cosecha</p>
                 </div>
                 <span class="materia-badge-disponible">📦 Consultar disponibilidad</span>
+                <a href="https://wa.me/573107821352?text=Hola%2C%20estoy%20interesado%20en%20Naranja.%20¿Hay%20disponibilidad%20actualmente?" target="_blank" class="pedido-btn">💬 Pedir por WhatsApp</a>
             </div>
 
             <!-- LIMÓN TAHITÍ -->
             <div class="materia-card">
-                <img src="img/fruta-limon.jpg" alt="Limón Tahití" class="materia-icon" width="100" height="100">
+                <img src="img/fruta-limon.jpg" alt="Limón Tahití" class="materia-icon">
                 <p class="materia-nombre">🍋 Limón Tahití</p>
-                <p class="materia-desc">Ideal para jugos y gastronomía.</p>
-                <span class="materia-badge">Alta producción en temporada</span>
+                <p class="materia-desc">Verde brillante, con alto contenido de jugo y aroma intenso. Ideal para jugos, gastronomía y exportación. Libre de daños por heladas.</p>
+                <div class="temporada-badge">
+                    <div class="temporada-dot dot-alta"></div>
+                    <span class="temporada-text">Alta producción en temporada</span>
+                </div>
                 <div class="precio-box">
                     <span class="precio-titulo">💰 Precios por presentación</span>
                     <div class="precio-fila">
@@ -125,14 +141,18 @@
                     <p class="precio-nota">* Precios sujetos a temporada de cosecha</p>
                 </div>
                 <span class="materia-badge-disponible">📦 Consultar disponibilidad</span>
+                <a href="https://wa.me/573107821352?text=Hola%2C%20estoy%20interesado%20en%20Limón%20Tahití.%20¿Hay%20disponibilidad%20actualmente?" target="_blank" class="pedido-btn">💬 Pedir por WhatsApp</a>
             </div>
 
             <!-- AGUACATE -->
             <div class="materia-card">
-                <img src="img/images.jpg" alt="Aguacate" class="materia-icon" width="100" height="100">
+                <img src="img/images.jpg" alt="Aguacate" class="materia-icon">
                 <p class="materia-nombre">🥑 Aguacate</p>
-                <p class="materia-desc">Fuente de grasas saludables y energía.</p>
-                <span class="materia-badge">Cultivo nacional</span>
+                <p class="materia-desc">Cremoso y nutritivo, fuente de grasas saludables. Firme para transporte, punto de madurez acordado según tus necesidades de distribución.</p>
+                <div class="temporada-badge">
+                    <div class="temporada-dot dot-alta"></div>
+                    <span class="temporada-text">Cultivo nacional disponible</span>
+                </div>
                 <div class="precio-box">
                     <span class="precio-titulo">💰 Precios por presentación</span>
                     <div class="precio-fila">
@@ -146,26 +166,64 @@
                     <p class="precio-nota">* Precios sujetos a temporada de cosecha</p>
                 </div>
                 <span class="materia-badge-disponible">📦 Consultar disponibilidad</span>
+                <a href="https://wa.me/573107821352?text=Hola%2C%20estoy%20interesado%20en%20Aguacate.%20¿Hay%20disponibilidad%20actualmente?" target="_blank" class="pedido-btn">💬 Pedir por WhatsApp</a>
             </div>
-
 
         </div>
 
-        <p style="color:#5a6600; font-size:12px; margin-top:20px;">
-            ⚠️ Los precios son de referencia y pueden variar según el volumen y temporada. Contáctenos para confirmar precios y disponibilidad.
+        <p style="color:#5a6600; font-size:12px; margin-top:20px; border-top:1px solid #d4e88a; padding-top:16px;">
+            ⚠️ Los precios son de referencia y pueden variar según el volumen y temporada. Contáctanos para confirmar precios, disponibilidad y condiciones de entrega.
         </p>
     </main>
 
+    <!-- INFO ADICIONAL -->
+    <section style="background:#0a0f00; border-top:3px solid #f0e000; padding:40px 20px;">
+        <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px;">
+            <div style="background:#111800; border:1.5px solid #2d3a00; border-radius:16px; padding:24px 20px; text-align:left;">
+                <div style="font-size:36px; margin-bottom:12px;">🚚</div>
+                <h3 style="color:#ff8c00; font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; margin:0 0 10px;">Envío a todo Colombia</h3>
+                <p style="color:#8a9a50; font-size:13px; line-height:1.7; margin:0;">Coordinamos el despacho para que tu pedido llegue en las mejores condiciones a cualquier ciudad del país.</p>
+            </div>
+            <div style="background:#111800; border:1.5px solid #2d3a00; border-radius:16px; padding:24px 20px; text-align:left;">
+                <div style="font-size:36px; margin-bottom:12px;">📏</div>
+                <h3 style="color:#ff8c00; font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; margin:0 0 10px;">Pedidos personalizados</h3>
+                <p style="color:#8a9a50; font-size:13px; line-height:1.7; margin:0;">Adaptamos el tamaño del pedido según tu necesidad. Desde una canastilla hasta cargamentos completos para distribuidores.</p>
+            </div>
+            <div style="background:#111800; border:1.5px solid #2d3a00; border-radius:16px; padding:24px 20px; text-align:left;">
+                <div style="font-size:36px; margin-bottom:12px;">✅</div>
+                <h3 style="color:#ff8c00; font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; margin:0 0 10px;">Garantía incluida</h3>
+                <p style="color:#8a9a50; font-size:13px; line-height:1.7; margin:0;">Todos los pedidos incluyen nuestra <a href="garantia.html" style="color:#a8e000; font-weight:700;">política de garantía</a>. Si el producto no cumple, respondemos en menos de 48 horas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>¿Quieres hacer un pedido?</h2>
+        <p>Contáctanos ahora y recibe asesoría personalizada sobre disponibilidad, precios y condiciones de entrega.</p>
+        <a href="https://wa.me/573107821352?text=Hola%20Ever%2C%20quisiera%20hacer%20un%20pedido.%20¿Me%20puede%20dar%20información%20sobre%20disponibilidad?" target="_blank" class="boton-whatsapp-footer" style="font-size:16px; padding:14px 36px;">
+            <img src="img/wssp.png" width="24" height="24" alt="WhatsApp"> Hacer pedido por WhatsApp
+        </a>
+        <br><br>
+        <a href="contactenos.html" style="color:#a8e000; font-size:13px; text-decoration:underline;">O completa el formulario de contacto →</a>
+    </section>
+
     <footer>
+        <div class="footer-logo">
+            <img src="img/logo empresa.jpg" alt="Logo Fresh Huila Export">
+        </div>
+        <p style="color:#a8e000; font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; margin:0 0 4px;">FRESH HUILA EXPORT</p>
+        <p class="footer-tagline">Frescura natural, compromiso global — Colombia 🇨🇴</p>
         <div class="footer-links">
-            <a href="terminos.html">Términos y Condiciones</a>
-            <a href="privacidad.html">Política de Privacidad</a>
-            <a href="garantia.html">Política de Garantía</a>
+            <a href="terminos.html">📋 Términos y Condiciones</a>
+            <a href="privacidad.html">🔒 Política de Privacidad</a>
+            <a href="garantia.html">✅ Política de Garantía</a>
         </div>
         <a href="https://wa.me/573107821352" target="_blank" class="boton-whatsapp-footer">
-            <img src="img/wssp.png" width="24" height="24" alt="WhatsApp"> Contáctanos por WhatsApp
+            <img src="img/wssp.png" width="22" height="22" alt="WhatsApp"> Contáctanos por WhatsApp
         </a>
         <p class="footer-copy">© 2025 FRESH HUILA EXPORT — Todos los derechos reservados</p>
     </footer>
+
 </body>
 </html>

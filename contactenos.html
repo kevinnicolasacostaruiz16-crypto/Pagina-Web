@@ -3,66 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesion De Contactos</title>
+    <title>Contáctenos — FRESH HUILA EXPORT</title>
     <link rel="stylesheet" href="estilo.css">
-  
 </head>
 <body>
+
+    <div class="demo-banner">💬 Estamos para atenderte — WhatsApp: +57 310 782 1352 🍊</div>
+
     <header>
+        <div style="display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;">
+            <img src="img/logo empresa.jpg" width="60" height="60" alt="Logo" style="border-radius:50%; border:2px solid #a8e000; object-fit:cover;">
+            <h1>Contáctenos</h1>
+        </div>
         <nav>
-            <h1> Registro FRESH HUILA EXPORT</h1>
-         <a href="index.html">Inicio</a>
-        <a href="contactenos.html">Contacto</a>
-        <a href="productos.html">Productos</a> 
-        <a href="historia.html">Historia</a>
- 
+            <a href="index.html">🏠 Inicio</a>
+            <a href="productos.html">🍊 Productos</a>
+            <a href="historia.html">📖 Historia</a>
+            <a href="contactenos.html" class="active">📋 Contacto</a>
         </nav>
     </header>
 
     <main>
+        <h2>Registro y Contacto</h2>
+        <p class="subtitulo">¿Interesado en nuestros productos? Completa el formulario o contáctanos directamente por WhatsApp. Respondemos en menos de 24 horas.</p>
 
+        <div class="contact-grid" style="margin-top:24px;">
 
-        <form>
-            <h1 align="center"><b>Registro</b></h1>
-            <label><i>Nombre</i></label>
-            <input type="text">
-            <br><br>
-            <label>Edad</label>
-            <input type="number">
-            <br><br>
-             <label>Numero de telefono</label>
-            <input type="number">
-            <br><br>
-             <label><i>Producto</i></label>
-            <input type="text">
-            <br><br>
-             <label><i>Peso requerido(kg)</i></label>
-            <input type="number">
-            <br><br>
-            
-            <button>Guardar</button> <br>
+            <!-- FORMULARIO -->
+            <div>
+                <form onsubmit="enviarFormulario(event)">
+                    <h3 style="color:#2d6a00; font-family:'Montserrat',sans-serif; text-align:center; margin:0 0 22px; font-size:18px;">📋 Formulario de Registro</h3>
 
+                    <div class="form-group">
+                        <label>👤 Nombre completo *</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                    </div>
 
+                    <div class="form-group">
+                        <label>📞 Número de teléfono *</label>
+                        <input type="tel" id="telefono" placeholder="Ej: 310 782 1352" required>
+                    </div>
 
+                    <div class="form-group">
+                        <label>📧 Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@correo.com">
+                    </div>
 
-  
-            
+                    <div class="form-group">
+                        <label>🏙️ Ciudad / Municipio *</label>
+                        <input type="text" id="ciudad" placeholder="¿Desde dónde nos contactas?" required>
+                    </div>
 
+                    <div class="form-group">
+                        <label>🍊 Producto de interés *</label>
+                        <select id="producto" required style="width:100%; padding:10px 14px; border:1.5px solid #a8e000; border-radius:8px; background:#fffff5; color:#1a1a00; font-size:14px;">
+                            <option value="">Selecciona un producto</option>
+                            <option value="naranja">🍊 Naranja</option>
+                            <option value="limon">🍋 Limón Tahití</option>
+                            <option value="aguacate">🥑 Aguacate</option>
+                            <option value="varios">📦 Varios productos</option>
+                        </select>
+                    </div>
 
-            
-        </form>
+                    <div class="form-group">
+                        <label>⚖️ Peso requerido (kg)</label>
+                        <input type="number" id="peso" placeholder="Ej: 200" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label>💬 Mensaje adicional</label>
+                        <textarea id="mensaje" placeholder="Cuéntanos más sobre tu pedido, frecuencia de compra, tipo de presentación que necesitas..."></textarea>
+                    </div>
+
+                    <button type="submit">📤 Enviar Registro</button>
+
+                    <p style="text-align:center; color:#5a6600; font-size:11px; margin-top:12px;">
+                        Al enviar este formulario aceptas nuestra <a href="privacidad.html" style="color:#2d6a00; font-weight:700;">Política de Privacidad</a>
+                    </p>
+                </form>
+
+                <div id="confirmacion" style="display:none; background:#f0ffe0; border:2px solid #a8e000; border-radius:14px; padding:20px; margin-top:16px; text-align:center;">
+                    <div style="font-size:40px; margin-bottom:10px;">✅</div>
+                    <p style="color:#2d6a00; font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; margin:0 0 6px;">¡Registro enviado con éxito!</p>
+                    <p style="color:#5a6600; font-size:13px; margin:0 0 14px;">Nuestro equipo te contactará pronto. También puedes escribirnos directamente por WhatsApp.</p>
+                    <a href="https://wa.me/573107821352" target="_blank" style="background:#25D366; color:#fff; padding:10px 22px; border-radius:30px; text-decoration:none; font-weight:700; font-size:14px;">💬 Abrir WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- INFO DE CONTACTO -->
+            <div>
+                <div class="contact-info-box">
+                    <h3>📞 Información de Contacto</h3>
+
+                    <div class="contact-item">
+                        <span>💬</span>
+                        <div>
+                            <strong style="color:#a8e000; display:block; font-size:13px; margin-bottom:2px;">WhatsApp (principal)</strong>
+                            <a href="https://wa.me/573107821352" target="_blank">+57 310 782 1352</a>
+                            <small style="display:block; color:#5a6600; font-size:11px;">Lun–Sáb: 7:00 AM – 5:00 PM</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>👨‍🌾</span>
+                        <div>
+                            <strong style="color:#a8e000; display:block; font-size:13px; margin-bottom:2px;">Contacto comercial</strong>
+                            <span style="color:#b0c070;">Ever — Director Comercial</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <div>
+                            <strong style="color:#a8e000; display:block; font-size:13px; margin-bottom:2px;">Ubicación</strong>
+                            <span style="color:#b0c070;">Departamento del Huila, Colombia 🇨🇴</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>📦</span>
+                        <div>
+                            <strong style="color:#a8e000; display:block; font-size:13px; margin-bottom:2px;">Cobertura de entrega</strong>
+                            <span style="color:#b0c070;">Todo el territorio colombiano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HORARIOS -->
+                <div class="contact-info-box" style="margin-top:16px;">
+                    <h3>⏰ Horarios de Atención</h3>
+                    <div class="horario-item">
+                        <span>Lunes – Viernes</span>
+                        <span>7:00 AM – 5:00 PM</span>
+                    </div>
+                    <div class="horario-item">
+                        <span>Sábado</span>
+                        <span>7:00 AM – 12:00 PM</span>
+                    </div>
+                    <div class="horario-item">
+                        <span>Domingo</span>
+                        <span>Solo urgencias</span>
+                    </div>
+                    <p style="color:#5a6600; font-size:11px; margin:12px 0 0; font-style:italic;">⚠️ Fuera de horario puedes escribirnos por WhatsApp y te responderemos al siguiente día hábil.</p>
+                </div>
+
+                <!-- PRODUCTOS DISPONIBLES -->
+                <div class="contact-info-box" style="margin-top:16px;">
+                    <h3>🛒 Productos Disponibles</h3>
+                    <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; background:#0e1500; border-radius:8px; padding:10px 14px;">
+                            <span style="color:#b0c070; font-size:13px;">🍊 Naranja — Bulto 40 kg</span>
+                            <span style="color:#a8e000; font-weight:800; font-size:13px;">$45.000</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; background:#0e1500; border-radius:8px; padding:10px 14px;">
+                            <span style="color:#b0c070; font-size:13px;">🍋 Limón Tahití — Bulto 70 kg</span>
+                            <span style="color:#a8e000; font-weight:800; font-size:13px;">$300.000</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; background:#0e1500; border-radius:8px; padding:10px 14px;">
+                            <span style="color:#b0c070; font-size:13px;">🥑 Aguacate — Bulto 20 kg</span>
+                            <span style="color:#a8e000; font-weight:800; font-size:13px;">$60.000</span>
+                        </div>
+                    </div>
+                    <p style="color:#5a6600; font-size:11px; margin:10px 0 0; font-style:italic;">* Precios de referencia, consultar disponibilidad.</p>
+                    <a href="productos.html" style="display:block; text-align:center; margin-top:12px; color:#ff8c00; font-weight:700; font-size:13px; text-decoration:none;">Ver todos los precios →</a>
+                </div>
+
+                <!-- BOTÓN WHATSAPP DESTACADO -->
+                <div style="margin-top:16px; background:linear-gradient(135deg,#1a2400,#0e1500); border:2px solid #25D366; border-radius:16px; padding:22px; text-align:center;">
+                    <p style="color:#fff; font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; margin:0 0 6px;">¿Prefieres contacto inmediato?</p>
+                    <p style="color:#8a9a50; font-size:13px; margin:0 0 16px;">Escríbenos directamente por WhatsApp y te atendemos al instante.</p>
+                    <a href="https://wa.me/573107821352?text=Hola%20Ever%2C%20estoy%20interesado%20en%20sus%20productos%20agrícolas.%20¿Me%20puede%20dar%20más%20información?" target="_blank" class="boton-whatsapp-footer" style="margin:0; font-size:15px;">
+                        <img src="img/wssp.png" width="22" height="22" alt="WhatsApp"> Escribir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
+
     <footer>
+        <div class="footer-logo">
+            <img src="img/logo empresa.jpg" alt="Logo Fresh Huila Export">
+        </div>
+        <p style="color:#a8e000; font-family:'Montserrat',sans-serif; font-weight:800; font-size:16px; margin:0 0 4px;">FRESH HUILA EXPORT</p>
+        <p class="footer-tagline">Frescura natural, compromiso global — Colombia 🇨🇴</p>
         <div class="footer-links">
-            <a href="terminos.html">Términos y Condiciones</a>
-            <a href="privacidad.html">Política de Privacidad</a>
-            <a href="garantia.html">Política de Garantía</a>
+            <a href="terminos.html">📋 Términos y Condiciones</a>
+            <a href="privacidad.html">🔒 Política de Privacidad</a>
+            <a href="garantia.html">✅ Política de Garantía</a>
         </div>
         <a href="https://wa.me/573107821352" target="_blank" class="boton-whatsapp-footer">
-            <img src="img/wssp.png" width="24" height="24" alt="WhatsApp"> Contáctanos por WhatsApp
+            <img src="img/wssp.png" width="22" height="22" alt="WhatsApp"> Contáctanos por WhatsApp
         </a>
         <p class="footer-copy">© 2025 FRESH HUILA EXPORT — Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        function enviarFormulario(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const ciudad = document.getElementById('ciudad').value;
+            const producto = document.getElementById('producto').value;
+            const peso = document.getElementById('peso').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Construir mensaje de WhatsApp
+            let msg = `Hola Ever, soy ${nombre} de ${ciudad}.\n`;
+            msg += `📞 Teléfono: ${telefono}\n`;
+            if (producto) msg += `🛒 Producto: ${producto}\n`;
+            if (peso) msg += `⚖️ Cantidad: ${peso} kg\n`;
+            if (mensaje) msg += `💬 Mensaje: ${mensaje}`;
+
+            const waUrl = `https://wa.me/573107821352?text=${encodeURIComponent(msg)}`;
+
+            // Mostrar confirmación
+            document.getElementById('confirmacion').style.display = 'block';
+            document.getElementById('confirmacion').scrollIntoView({ behavior: 'smooth' });
+
+            // Abrir WhatsApp
+            setTimeout(() => { window.open(waUrl, '_blank'); }, 800);
+        }
+    </script>
+
 </body>
 </html>
-
